@@ -1,0 +1,661 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    font-family: Arial, sans-serif;
+    background-color: aqua;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto; /* Changed fixed height to auto for responsiveness */
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap; /* Allow navigation items to wrap on smaller screens */
+}
+
+nav a {
+    font-family: Arial, sans-serif;
+    margin-right: 20px;
+    text-decoration: none;
+    color: orangered;
+    font-size: 18px; /* Adjusted font size for better readability on smaller screens */
+}
+
+.hero {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10vw; /* Use viewport width for responsive padding */
+    height: auto; /* Changed fixed height to auto for responsiveness */
+    position: relative;
+    overflow: hidden;
+    animation: backgroundAnimation 100s infinite; /* Adjust the duration as needed */
+}
+
+.hero p {
+    font-family: Arial, sans-serif;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 4vw; /* Use viewport width for responsive font size */
+}
+
+
+.about-us {
+    font-family: Arial, sans-serif;
+    padding: 15px; /* Reduced padding for smaller screens */
+    text-align: center;
+    background: linear-gradient(to right, aqua, rgba(243, 231, 120, 1));
+    border-radius: 15px;
+    overflow: hidden;
+    color: #333;
+}
+
+.box-container {
+    background-image: url('pictures/background1.jpg');
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Center boxes on smaller screens */
+    max-width: 100%; /* Adjusted max-width for responsiveness */
+    margin: 20px auto;
+    border-radius: 20px; /* Adjusted border-radius */
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.box {
+    font-family: Arial, sans-serif;
+    width: calc(50% - 20px); /* Two boxes per row for smaller screens */
+    max-width: 400px; /* Limit the maximum width of each box */
+    background-color: #f2f2f2;
+    margin: 10px;
+    padding: 15px; /* Reduced padding for smaller screens */
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.box h3 {
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.box h3::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Adjusted height for smaller screens */
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, aqua, rgba(243, 231, 120, 1));
+    transform-origin: bottom right;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+.donate {
+    padding: 20px; /* Reduced padding for smaller screens */
+    text-align: center;
+    border-radius: 30px; /* Adjusted border-radius */
+}
+
+.donation-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow for multiple rows on smaller screens */
+    max-width: 100%; /* Adjusted max-width for responsiveness */
+    margin: 20px auto;
+    height: auto; /* Auto height for flexibility */
+    background-color: rgb(236, 241, 241);
+}
+
+.donation-content {
+    flex: 100%; /* Full width for smaller screens */
+    background: linear-gradient(to left, white, transparent);
+    padding: 20px;
+    text-align: center; /* Center text on smaller screens */
+}
+
+.donation-content h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.donation-content p {
+    font-family: Arial, sans-serif;
+    padding-top: 20px; /* Reduced padding for smaller screens */
+    font-size: 16px;
+    border-radius: 30px; /* Adjusted border-radius */
+}
+
+.donation-content button {
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    font-size: 18px; /* Adjusted font size for smaller screens */
+}
+
+.donation-image {
+    flex: 100%; /* Full width for smaller screens */
+    background-color: white;
+    overflow: hidden;
+}
+
+.donation-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio and adjust height for flexibility */
+    object-fit: cover;
+    display: block;
+    border-radius: 15px; /* Adjusted border-radius */
+}
+
+footer {
+    font-family: Arial, sans-serif;
+    background-color: rgb(192, 167, 7);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow for multiple rows on smaller screens */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-column {
+    flex: 100%; /* Full width for smaller screens */
+    max-width: 100%; /* Adjusted max-width for responsiveness */
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.social-media img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+ul {
+    font-family: Arial, sans-serif;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .donation-content p {
+        padding-top: 10px; /* Further reduced padding for smaller screens */
+    }
+
+    .donation-content button {
+        font-size: 16px; /* Further reduced font size for smaller screens */
+    }
+}
+
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .box {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+
+/* ... (Continue with your existing styles) */
+
+/* Responsive Typography */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 3vw;
+    }
+
+    /* Add more responsive styles as needed */
+}
+
+/* Keyframe animation for changing backgrounds */
+@keyframes backgroundAnimation {
+    0% {
+        background: url('Pictures/kids1.jpg') center;
+    }
+    10% {
+        background: url('Pictures/mentorship1.jpg') center;
+    }
+    20% {
+        background: url('Pictures/project1.jpg') center;
+    }
+    30% {
+        background: url('Pictures/project2.jpg') center;
+    }
+    40% {
+        background: url('Pictures/project3.jpg') center;
+    }
+    50% {
+        background: url('Pictures/site1.jpg') center;
+    }
+    60% {
+        background: url('Pictures/site2.jpg') center;
+    }
+    70% {
+        background: url('Pictures/team1.jpg') center;
+    }
+    80% {
+        background: url('Pictures/team2.jpg') center;
+    }
+    90% {
+        background: url('Pictures/team3.jpg') center;
+    }
+    100% {
+        background: url('Pictures/site3.jpg') center;
+    }
+    /* Your existing keyframes go here */
+}
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #135;
+    text-align: center;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #135;
+    margin-top: 20px;
+}
+
+ul, ol {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px; /* Adjusted font size for smaller screens */
+    }
+
+    p {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 20px; /* Adjusted font size for smaller screens */
+        margin-top: 15px; /* Adjusted margin for smaller screens */
+    }
+
+    ul, ol {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* projects.css */
+.project .hero {
+    font-weight: bold; /* Corrected the property name for font weight */
+    text-align: center;
+    /* Add styles specific to the hero section in the project page */
+}
+
+.project {
+    max-width: 100%; /* Adjusted max-width for responsiveness */
+    margin: 0 auto;
+    padding: 20px; /* Added padding for better spacing */
+    box-sizing: border-box; /* Box-sizing for more predictable box models */
+}
+
+.project h1 {
+    font-size: 36px;
+    color: #135;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.project p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.project h2 {
+    font-size: 22px;
+    color: #135;
+    margin-top: 20px;
+}
+
+.project ul, .project ol {
+    font-size: 16px;
+    color: #333;
+    list-style-type: disc;
+}
+
+.project ol {
+    list-style-type: decimal;
+}
+
+.project .box {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Added border-radius for a rounded appearance */
+}
+
+.financial-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+/* partners-section */
+
+.partners-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.partner-slider img {
+    max-width: 100%;
+}
+
+.partner-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.partner-names div {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.partner-names div:hover {
+    background-color: #135;
+    color: white;
+    cursor: pointer;
+}
+
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px; /* Adjusted padding for better spacing on smaller screens */
+    background-color: #f5f5f5;
+}
+
+.team-member {
+    text-align: center;
+    width: 100%; /* Adjusted width for full-width on smaller screens */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px; /* Adjusted padding for better spacing on smaller screens */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.profile-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .financial-section,
+    .partners-section,
+    .team-section {
+        padding: 20px; /* Adjusted padding for better spacing on smaller screens */
+    }
+
+    .team-member {
+        width: calc(50% - 20px); /* Adjusted width for two columns on smaller screens */
+    }
+}
+
+.container {
+    width: 80%;
+    margin: 40px auto;
+    height: 400px; /* Adjust margin as needed */
+}
+
+.slider-container {
+    background-color: #f0f0f0; /* Container background color */
+    border-radius: 15px; /* Add corner radius */
+    overflow: hidden; /* Hide overflowing shadows */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add box shadow */
+}
+
+.swiper-container {
+    border-radius: 15px; /* Match the container's corner radius */
+}
+
+.swiper-slide {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+    margin-top: 30px;
+}
+
+.swiper-slide p {
+    font-weight: bold;
+    margin-top: 20px; /* Add margin to sponsor names */
+    color: #333;
+}
+
+/* Adjust the styles for the Swiper pagination */
+.swiper-pagination {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px; /* Adjust the margin-top value to control the spacing */
+}
+
+/* Hide other sponsor names initially */
+.swiper-slide:not(.swiper-slide-active) p {
+    display: none;
+}
+
+/* styling for the contact form file */
+
+.contact-form-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.contact-form-section h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #135;
+}
+
+.contact-form-section p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+.contact-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form-section label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-section button {
+    background-color: #135;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-section button:hover {
+    background-color: #092;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .swiper-slide {
+        margin-top: 30px;
+    }
+
+    .contact-form-section {
+        padding: 20px;
+    }
+}
+.get-involved-button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjusted padding for better button appearance */
+    background-color: white;
+    color: #135;
+    text-decoration: none;
+    border: 1px solid #135;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.get-involved-button:hover {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    cursor: pointer;
+}
+
+.donate-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly increased alpha value for background opacity */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.donate-container h1 {
+    font-size: 36px;
+    color: #135;
+    text-align: center;
+    margin-bottom: 20px; /* Added margin for better spacing */
+}
+
+.donate-container p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .get-involved-button {
+        padding: 8px 16px; /* Adjusted padding for smaller screens */
+    }
+
+    .donate-container {
+        width: 90%;
+    }
+}
+

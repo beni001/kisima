@@ -1,0 +1,610 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    font-family: Arial, sans-serif;
+    background-color: aqua;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    font-family: Arial, sans-serif;
+    margin-right: 20px;
+    text-decoration: none;
+    color:orangered;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.hero {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    height: 80vh;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    animation: backgroundAnimation 100s infinite; /* Adjust the duration as needed */
+}
+
+.hero p {
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 74px;
+    font-weight: bold;
+    -webkit-text-stroke: 2px black; /* Stroke color and width (for webkit browsers) */
+}
+.about-us {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(to right, aqua, rgba(243, 231, 120, 1));
+    border-radius: 15px; /* Adjust the value for the desired corner radius */
+    overflow: hidden; /* Ensures the border-radius is applied properly */
+    color: #333;
+}
+
+.box-container {
+    background-image: url('pictures/background1.jpg');
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1800px;
+    margin: 20px auto;
+    border-radius: 40px;
+    background-color: rgba(0, 255, 255, 0.2); /* Adjust the alpha value (0.0 to 1.0) for fading */
+}
+
+
+.box {
+    font-family: Arial, sans-serif;
+    width: calc(25%);
+    background-color: #f2f2f2;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 60px; /* Adjust the value for the desired corner radius */
+    overflow: hidden; /* Ensures the border-radius is applied properly */
+    position: relative;
+}
+
+.box h3 {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+/* Fancy underline styles */
+.box h3::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px; /* Adjust the height of the underline */
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, aqua, rgba(243, 231, 120, 1));
+    transform-origin: bottom right;
+    transform: scaleX(1); /* Fully extend the underline by default */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hide the underline when someone hovers over the navigation */
+.nav:hover + .box h3::before {
+    transform: scaleX(0); /* Disappear the underline on hover */
+    transform-origin: bottom left;
+}
+
+
+.donate {
+    padding: 30px;
+    text-align: center;
+    border-radius: 60px;
+}
+
+.donation-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 20px auto;
+    height: 460px;
+    background-color: rgb(236, 241, 241);
+    
+}
+
+.donation-content {
+    flex: 2; /* Adjust the ratio between text and image */
+    background: linear-gradient(to left, white, transparent); /* Right-to-left linear gradient */
+    padding: 20px;
+    text-align: left;
+}
+
+.donation-content h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.donation-content p {
+    font-family: Arial, sans-serif;
+    padding-top: 40px;
+    font-size: 16px;
+    border-radius: 60;
+}
+
+.donation-content button {
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    font-size: 24px;
+}
+
+.donation-image {
+    flex: 3; /* Adjust the ratio between text and image */
+    background-color: white;
+    overflow: hidden;
+}
+
+.donation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    display: block;
+    border-radius: 180px;
+}
+
+
+
+
+footer {
+    font-family: Arial, sans-serif;
+    background-color:rgb(192, 167, 7) ;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    height: 180px;
+    align-items: center;
+   
+}
+
+.footer-column {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+
+}
+
+.social-media a {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+    justify-content: flex-start;
+}
+
+.social-media img {
+    width: 20px; /* Adjust the width as needed */
+    margin-right: 10px;
+}
+
+ul {
+    font-family: Arial, sans-serif;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+} 
+
+
+
+/* Keyframe animation for changing backgrounds */
+@keyframes backgroundAnimation {
+    0% {
+        background: url('Pictures/kids1.jpg') center;
+    }
+    10% {
+        background: url('Pictures/mentorship1.jpg') center;
+    }
+    20% {
+        background: url('Pictures/project1.jpg') center;
+    }
+    30% {
+        background: url('Pictures/project2.jpg') center;
+    }
+    40% {
+        background: url('Pictures/project3.jpg') center;
+    }
+    50% {
+        background: url('Pictures/site1.jpg') center;
+    }
+    60% {
+        background: url('Pictures/site2.jpg') center;
+    }
+    70% {
+        background: url('Pictures/team1.jpg') center;
+    }
+    80% {
+        background: url('Pictures/team2.jpg') center;
+    }
+    90% {
+        background: url('Pictures/team3.jpg') center;
+    }
+    100% {
+        background: url('Pictures/site3.jpg') center;
+    }
+}
+
+/* product page css
+     */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #135;
+    text-align: center;
+  }
+  
+  p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+  
+  }
+  
+  h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #135;
+    margin-top: 20px;
+  }
+  
+  ul, ol {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    list-style-type: disc;
+  }
+  
+  ol {
+    list-style-type: decimal;
+  
+}
+
+
+  /* products page styling */
+ /* projects.css */
+ .project .hero {
+    font: bolder;
+    text-align: center;
+    /* Add styles specific to the hero section in the project page */
+}
+
+
+.project {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project h1 {
+    font-size: 36px;
+    color: #135;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.project p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.project h2 {
+    font-size: 22px;
+    color: #135;
+    margin-top: 20px;
+}
+
+.project ul, .project ol {
+    font-size: 16px;
+    color: #333;
+    list-style-type: disc;
+}
+
+.project ol {
+    list-style-type: decimal;
+}
+.project .box {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+}
+
+/* Add more specific styles for elements within the project section as needed */
+/* aout us page styling */
+.financial-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+
+/* partners-section */
+
+.partners-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.partner-slider img {
+    max-width: 100%;
+}
+
+.partner-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.partner-names div {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.partner-names div:hover {
+    background-color: #135;
+    color: white;
+    cursor: pointer;
+}
+.team-section {
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.team-member {
+    
+    text-align: center;
+    width: 200px; /* Reduce the width */
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px; /* Reduce the padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.profile-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.profile-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+/* Add your existing styles here */
+
+/* Add your existing styles here */
+/* Add your existing styles here */
+.container {
+    
+    width: 80%;
+    margin: 40px auto; 
+    height:  400px;/* Adjust margin as needed */
+  
+}
+
+.slider-container {
+    
+    background-color: #f0f0f0; /* Container background color */
+    border-radius: 15px; /* Add corner radius */
+    overflow: hidden; /* Hide overflowing shadows */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add box shadow */
+}
+
+.swiper-container {
+    border-radius: 15px; /* Match the container's corner radius */
+}
+
+.swiper-slide {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%; /* Ensure all images have the same size */
+    object-fit: contain; /* Maintain aspect ratio without stretching */
+    margin-top: 30px;
+}
+
+.swiper-slide p {
+    font-weight: bold;
+    margin-top: 20px 0; /* Add margin to sponsor names */
+    color: #333;
+}
+
+/* Adjust the styles for the Swiper pagination */
+.swiper-pagination {
+    position: absolute;
+ 
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px; /* Adjust the margin-top value to control the spacing */
+}
+
+
+/* Hide other sponsor names initially */
+.swiper-slide:not(.swiper-slide-active) p {
+    display: none;
+}
+/* styling fo the contact form file */
+
+.contact-form-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.contact-form-section h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    color: #135;
+}
+
+.contact-form-section p {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+.contact-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form-section label {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-section button {
+    background-color: #135;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-section button:hover {
+    background-color: #092;
+}
+ /* donation styling */
+ /* getting involved button */
+ .get-involved-button {
+    display: inline-block;
+    padding: 8px 20px; /* Adjust the padding as needed to control the height */
+    background-color: white;
+    color: #135;
+    text-decoration: none;
+    border: 1px solid #135;
+    border-radius: 5px;
+    font-size: 16px; /* Adjust the font size as needed */
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.get-involved-button:hover {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    cursor: pointer;
+}
+/* body {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('pictures/background1.jpg') center/cover no-repeat; 
+    color: #333;
+} */
+
+.donate-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for background opacity */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.donate-container h1 {
+    font-size: 36px;
+    color: #135;
+    text-align: center;
+}
+
+.donate-container p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
